@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>믹서기엔 뭐가 있을까요?</title>
+</head>
+
+
+<style type="text/css">
+	
+	.contain {position: relative;}
+	#title{margin: auto; position: absolute; top: 200px; left: 630px; }
+	#title:hover {
+	  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+	  transform: translate3d(0, 0, 0);
+	  backface-visibility: hidden;
+	  perspective: 1000px;
+	}
+	#mix{margin: auto; position: absolute; 
+		top: 370px; left: 400px;  
+		width: 170px; height: 270px; 
+		background: url('./img/mix.png'); 
+		background-size: cover;
+		cursor: pointer;}
+
+	#mix:hover {
+	  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+	  transform: translate3d(0, 0, 0);
+	  backface-visibility: hidden;
+	  perspective: 1000px;
+	}
+	
+	#mix1{margin: auto; position: absolute; 
+		top: 370px; left: 690px;  
+		width: 170px; height: 270px; 
+		background: url('./img/mix.png'); 
+		background-size: cover;
+		cursor: pointer;}
+
+	#mix1:hover {
+	  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+	  transform: translate3d(0, 0, 0);
+	  backface-visibility: hidden;
+	  perspective: 1000px;
+	}
+
+	#mix2{margin: auto; position: absolute; 
+		top: 370px; left: 980px; 
+		width: 170px; height: 270px;
+		background: url('./img/mix.png'); 
+		background-size: cover;
+		cursor: pointer;}
+
+	#mix2:hover {
+	  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+	  transform: translate3d(0, 0, 0);
+	  backface-visibility: hidden;
+	  perspective: 1000px;
+	}
+
+	#vid{margin: auto; position: absolute;
+		top:25px; left: 260px;}
+
+
+	#vid1{margin: auto; position: absolute;
+		top: 25px; left: 970px;}
+
+	#vid2{margin: auto; position: absolute;
+		top: 40px; left: 90px; }
+
+
+	#vid3{margin: auto; position: absolute;
+		top: 40px; left: 970px;}
+
+
+	#vid4{margin: auto; position: absolute;
+		top: 25px; left: 250px; }
+
+	#vid5{margin: auto; position: absolute;
+		top: 25px; left: 980px;}
+
+
+	img {max-width: 100%; height: auto; }
+
+	@keyframes slideDown {
+	 	from {top: -320px;}
+		to {top: 25px;}
+
+		}
+
+	@keyframes slideDown2 {
+	 	from {top: -320px;}
+		to {top: 40px;}
+
+		}
+
+	@keyframes shake {
+		  10%, 90% {
+		    transform: translate3d(-1px, 0, 0);
+		  }
+		  
+		  20%, 80% {
+		    transform: translate3d(2px, 0, 0);
+		  }
+
+		  30%, 50%, 70% {
+		    transform: translate3d(-4px, 0, 0);
+		  }
+
+		  40%, 60% {
+		    transform: translate3d(4px, 0, 0);
+		  }
+		}
+
+	@keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}
+
+</style>
+
+
+<body class="contain" style="background-color: #663892;">
+
+	<div id="title">
+		<img src="./img/meme.png" style="width: 300px; height: auto;">
+	</div>
+	<div id="mix"></div>
+	<div id="mix1"></div>
+	<div id="mix2"></div>
+	<video id="vid" width="320" height="auto">
+ 		<source src="bap.mp4" type="video/mp4">
+ 	</video>
+ 	<video id="vid1" width="320" height="auto">
+ 		<source src="bap.mp4" type="video/mp4">
+ 	</video>
+ 	<video id="vid2" width="480" height="auto">
+ 		<source src="bing.mp4" type="video/mp4">
+ 	</video>
+ 	<video id="vid3" width="480" height="auto">
+ 		<source src="bing.mp4" type="video/mp4">
+ 	</video>
+ 	<video id="vid4" width="320" height="auto">
+ 		<source src="five.mp4" type="video/mp4">
+ 	</video>
+ 	<video id="vid5" width="320" height="auto">
+ 		<source src="five.mp4" type="video/mp4">
+ 	</video>
+
+<script type="text/javascript">
+	var currentmix = 1;
+	vid.style.visibility = "hidden";
+	vid1.style.visibility = "hidden";
+
+	mix.onclick = function(){
+
+
+		if (currentmix == 1) {
+			mix.style.background = "url('./img/shake.png')";
+			vid.style.animation = "slideDown 3s","1";
+			vid1.style.animation = "slideDown 3s","1";
+			currentmix = 2;
+
+			vid.style.visibility = "visible";
+			vid1.style.visibility = "visible";
+			
+			vid.play()
+			vid1.play()
+			vid.currentTime = "0";
+			vid1.currentTime = "0";
+
+		}else if (currentmix == 2) {
+			mix.style.background = "url('./img/mix.png')";
+			currentmix = 1;
+
+			vid.style.visibility = "hidden";
+			vid1.style.visibility = "hidden";
+
+			vid.pause()
+			vid1.pause()
+
+		}
+
+		mix.style.backgroundSize = "cover"
+	}
+	
+	var currentmix1 = 1;
+	vid4.style.visibility = "hidden";
+	vid5.style.visibility = "hidden";
+	
+	mix1.onclick = function(){
+		
+
+		if (currentmix1 == 1) {
+			mix1.style.background = "url('./img/shake.png')";
+			vid4.style.animation = "slideDown 3s","1";
+			vid5.style.animation = "slideDown 3s","1";
+			vid4.style.animation = "slideDown 3s","1";
+			vid5.style.animation = "slideDown 3s","1";
+			currentmix1 = 2;
+
+			vid4.style.visibility = "visible";
+			vid5.style.visibility = "visible";
+			
+			vid4.play()
+			vid5.play()
+			vid4.currentTime = "0";
+			vid5.currentTime = "0";	
+
+		}else if (currentmix1 == 2) {
+			mix1.style.background = "url('./img/mix.png')";
+			currentmix1 = 1;
+
+			vid4.style.visibility = "hidden";
+			vid5.style.visibility = "hidden";
+
+			vid4.pause()
+			vid5.pause()
+		}
+		mix1.style.backgroundSize = "cover"
+	}
+
+	var currentmix2 = 1;
+	vid2.style.visibility = "hidden";
+	vid3.style.visibility = "hidden";
+
+	mix2.onclick = function(){
+
+
+		if (currentmix2 == 1) {
+			mix2.style.background = "url('./img/shake.png')";
+			vid2.style.animation = "slideDown2 3s","1";
+			vid3.style.animation = "slideDown2 3s","1";
+			currentmix2 = 2;
+
+			vid2.style.visibility = "visible";
+			vid3.style.visibility = "visible";
+			
+			vid2.play()
+			vid3.play()
+			vid2.currentTime = "0";
+			vid3.currentTime = "0";
+
+		}else if (currentmix2 == 2) {
+			mix2.style.background = "url('./img/mix.png')";
+			currentmix2 = 1;
+
+			vid2.style.visibility = "hidden";
+			vid3.style.visibility = "hidden";
+
+			vid2.pause()
+			vid3.pause()
+		}
+
+		mix2.style.backgroundSize = "cover"
+	}
+
+
+</script>
+
+</body>
+</html>
